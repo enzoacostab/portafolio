@@ -8,3 +8,18 @@
   }
 } 
 
+.card{
+  animation: appear auto linear;
+  animation-timeline: view();
+  animation-range: 0 35%;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
