@@ -13,9 +13,7 @@ export const Article: React.FC<Props> = ({ project }) => {
 				{project.title}
 			</h2>
 			{project.img 
-				? <div className="bg-zinc-700 rounded-lg p-5 flex items-center justify-center">
-						<Image src={project.img} height={1020} width={1920} className="self-center rounded-md shadow-lg border border-gray-700" alt="project image"/>
-					</div> 
+				? <Image src={project.img} height={1020} width={1920} className="self-center border-zinc-700 border rounded-md" alt="project image"/>
 				: null}
 			{project.description 
 				? <p className="z-20 mt-4 text-sm duration-1000 text-zinc-400 group-hover:text-zinc-200">
