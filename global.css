@@ -11,15 +11,28 @@
 .card{
   animation: appear auto linear;
   animation-timeline: view();
-  animation-range: 0 35%;
+  animation-range: 0 cover 100%;
+  animation-fill-mode: both;
 }
 
 @keyframes appear {
-  from {
+  0% {
     opacity: 0;
+    scale: 0;
   }
 
-  to {
+  40% {
     opacity: 1;
+    scale: 1;
+  }
+
+  60% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 0;
   }
 }
