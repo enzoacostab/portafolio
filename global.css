@@ -17,22 +17,38 @@
 
 @keyframes appear {
   0% {
+    filter: grayscale(100%);
+    scale: .5;
     opacity: 0;
-    scale: 0;
   }
 
   40% {
-    opacity: 1;
+    filter: grayscale(100%);
     scale: 1;
+    opacity: 1;
   }
 
+  41% {
+    filter: grayscale(0%);
+  }
+
+  50% {
+    filter: grayscale(0%);
+  }
+  
+  59% {
+    filter: grayscale(0%);
+  }
+  
   60% {
-    opacity: 1;
+    filter: grayscale(100%);
     scale: 1;
+    opacity: 1;
   }
 
   100% {
+    filter: grayscale(100%);
+    scale: .5;
     opacity: 0;
-    scale: 0;
   }
 }
