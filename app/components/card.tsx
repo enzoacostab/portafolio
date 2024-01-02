@@ -5,10 +5,14 @@ import {
 	useMotionValue,
 	useSpring,
 } from "framer-motion";
+import { ReactNode } from "react";
 
-import { MouseEventHandler, PropsWithChildren } from "react";
+interface Props {
+	children: ReactNode,
+	animation?: boolean
+}
 
-export const Card: React.FC<PropsWithChildren> = ({ children }) => {
+export const Card: React.FC<Props> = ({ children, animation }) => {
 	const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
 	const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
@@ -23,7 +27,7 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<div
 			onMouseMove={onMouseMove}
-			className="flex flex-col justify-center relative duration-700 border rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600 card"
+			className={`flex flex-col justify-center relative duration-700 border rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600 ${animation ? "card" : ""}`}
 		>
 			<div className="pointer-events-none">
 				<div className="absolute inset-0 z-0  transition duration-1000 [mask-image:linear-gradient(black,transparent)]" />

@@ -30,7 +30,7 @@ export default async function ProjectsPage() {
 						{projects
 							.filter((_, i) => i % 2 === 0)
 							.map((project) => (
-								<Card key={project.slug}>
+								<Card key={project.slug} animation>
 									<Article project={project} />
 								</Card>
 							))}
@@ -39,7 +39,7 @@ export default async function ProjectsPage() {
 						{projects
 							.filter((_, i) => i % 2 === 1)
 							.map((project) => (
-								<Card key={project.slug}>
+								<Card key={project.slug} animation>
 									<Article project={project} />
 								</Card>
 							))}
