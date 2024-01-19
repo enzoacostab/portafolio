@@ -1,6 +1,7 @@
 import type { Project } from "@/.contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
+import { Github, ExternalLink } from "lucide-react";
 
 type Props = {
 	project: Project;
@@ -20,9 +21,9 @@ export const Article: React.FC<Props> = ({ project }) => {
 						{project.description}
 					</p>
 				: null}
-			<div className="flex gap-3">
-				<Link href={`https://github.com/${project.repository}`} className="duration-200 text-zinc-400 hover:text-zinc-100">Repository</Link>
-				<Link href={project.url} className="duration-200 text-zinc-400 hover:text-zinc-100">Demo</Link>
+			<div className="flex gap-5">
+				<Link target="_blank" href={project.repository} className="duration-200 text-zinc-400 hover:text-zinc-100 flex gap-1 items-center"><Github size={15}/> Repositorio</Link>
+				<Link target="_blank" href={project.url} className="duration-200 text-zinc-400 hover:text-zinc-100 flex gap-1 items-center"><ExternalLink size={15}/>Demo</Link>
 			</div>
 		</article>
 	);
