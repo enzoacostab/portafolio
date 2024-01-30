@@ -17,7 +17,7 @@ export default async function ProjectsPage() {
 			<div className="px-6 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 pt-64 2xl:pt-40">
 
 				<div className="grid grid-cols-1 gap-10 mx-auto lg:mx-0 md:grid-cols-2">
-					<div className="grid grid-cols-1 gap-10">
+					<div className="grid grid-cols-1 gap-10 h-fit">
 						{projects
 							.filter((_, i) => i % 2 === 0)
 							.map((project) => (
@@ -26,7 +26,7 @@ export default async function ProjectsPage() {
 								</Card>
 							))}
 					</div>
-					<div className="grid grid-cols-1 gap-10">
+					<div className="grid grid-cols-1 gap-10 h-fit">
 						{projects
 							.filter((_, i) => i % 2 === 1)
 							.map((project) => (
