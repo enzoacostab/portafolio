@@ -32,7 +32,7 @@ export default function Example() {
 			<div className="container flex items-center justify-center h-[100dvh] px-4 mx-auto">
 				<div className="grid w-full grid-cols-1 gap-8 mx-auto sm:mt-0 sm:grid-cols-3 lg:gap-16">
 					{socials.map((s) => (
-						<Card>
+						<Card contact>
 							<Link
 								href={s.href}
 								target="_blank"
