@@ -9,7 +9,7 @@ import { ReactNode } from "react";
 
 interface Props {
 	children: ReactNode,
-	animation?: boolean
+	animation?: boolean,
 }
 
 export const Card: React.FC<Props> = ({ children, animation }) => {
@@ -25,7 +25,10 @@ export const Card: React.FC<Props> = ({ children, animation }) => {
 	let style = { maskImage, WebkitMaskImage: maskImage };
 
 	return (
-		<div
+		<motion.div
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			viewport={{ margin: "-300px" }}
 			onMouseMove={onMouseMove}
 			className={`flex flex-col justify-center relative duration-700 border rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600 ${animation ? "card" : ""}`}
 		>
@@ -40,8 +43,7 @@ export const Card: React.FC<Props> = ({ children, animation }) => {
 					style={style}
 				/>
 			</div>
-
 			{children}
-		</div>
+		</motion.div>
 	);
 };

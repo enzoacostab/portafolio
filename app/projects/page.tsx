@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
@@ -7,10 +6,6 @@ import { Article } from "./article";
 
 export const revalidate = 60;
 export default async function ProjectsPage() {
-
-	const projects = allProjects
-		.filter((p) => p.published)
-
 	return (
 		<div className="relative pb-64 sm:pb-64 2xl:pb-36">
 			<Navigation />
@@ -18,7 +13,7 @@ export default async function ProjectsPage() {
 
 				<div className="grid grid-cols-1 gap-10 mx-auto lg:mx-0 md:grid-cols-2">
 					<div className="grid grid-cols-1 gap-10 h-fit">
-						{projects
+						{allProjects
 							.filter((_, i) => i % 2 === 0)
 							.map((project) => (
 								<Card key={project.slug} animation>
@@ -27,12 +22,12 @@ export default async function ProjectsPage() {
 							))}
 					</div>
 					<div className="grid grid-cols-1 gap-10 h-fit">
-						{projects
+						{allProjects
 							.filter((_, i) => i % 2 === 1)
 							.map((project) => (
 								<Card key={project.slug} animation>
 									<Article project={project} />
-								</Card>
+								</Card> 
 							))}
 					</div>
 				</div>

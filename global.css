@@ -8,9 +8,6 @@
   }
 } 
 
-
-
-
 body {
   --sb-track-color: #000000;
   --sb-thumb-color: #ffffff;
@@ -34,47 +31,3 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   border: 4px solid #000000;
   }
-.card{
-  animation: appear auto linear;
-  animation-timeline: view();
-  animation-range: 0 cover 100%;
-  animation-fill-mode: both;
-}
-
-@keyframes appear {
-  0% {
-    filter: grayscale(100%);
-    scale: .5;
-    opacity: 0;
-  }
-
-  40% {
-    filter: grayscale(100%);
-    scale: 1;
-    opacity: 1;
-  }
-
-  41% {
-    filter: grayscale(0%);
-  }
-
-  50% {
-    filter: grayscale(0%);
-  }
-  
-  59% {
-    filter: grayscale(0%);
-  }
-  
-  60% {
-    filter: grayscale(100%);
-    scale: 1;
-    opacity: 1;
-  }
-
-  100% {
-    filter: grayscale(100%);
-    scale: .5;
-    opacity: 0;
-  }
-}
