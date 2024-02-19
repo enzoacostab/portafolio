@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 	},
 };
 const inter = Inter({
-	subsets: ["latin"],
+	subsets: ["latin-ext"],
 	variable: "--font-inter",
 });
 
